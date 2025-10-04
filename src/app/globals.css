@@ -1,8 +1,20 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #E8F9F2;
+  --background-secondary: #C7EDE0;
+  --foreground: #333333;
+  --foreground-muted: #666666;
+  --card-bg: #ffffff;
+  --sidebar-bg: #2d2d2d;
+  --accent-yellow: #FFFBA6;
+  --accent-green: #27AE60;
+  --accent-red: #E74C3C;
+  --accent-gold: #FFD700;
+  --text-muted: #666666;
+  --border-light: #e5e7eb;
 }
 
 @theme inline {
@@ -12,15 +24,71 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, var(--background) 0%, var(--background-secondary) 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Neumorphic shadow utilities */
+.neu-shadow {
+  box-shadow: 
+    12px 12px 24px rgba(163, 177, 198, 0.4),
+    -12px -12px 24px rgba(255, 255, 255, 0.8),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.neu-shadow-inset {
+  box-shadow: 
+    inset 8px 8px 16px rgba(163, 177, 198, 0.6),
+    inset -8px -8px 16px rgba(255, 255, 255, 0.5);
+}
+
+.neu-shadow-sm {
+  box-shadow: 
+    6px 6px 12px rgba(163, 177, 198, 0.3),
+    -6px -6px 12px rgba(255, 255, 255, 0.6),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.neu-button {
+  box-shadow: 
+    4px 4px 8px rgba(163, 177, 198, 0.3),
+    -4px -4px 8px rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+.neu-button:hover {
+  box-shadow: 
+    2px 2px 4px rgba(163, 177, 198, 0.4),
+    -2px -2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.neu-button:active {
+  box-shadow: 
+    inset 2px 2px 4px rgba(163, 177, 198, 0.4),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.6);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
 }
