@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { CreditCard, User, ArrowLeft, FileText } from 'lucide-react';
+import { CreditCard, ArrowLeft, FileText } from 'lucide-react';
 import Image from 'next/image';
 
 export default function RightTransferPanel() {
